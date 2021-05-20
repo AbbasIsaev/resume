@@ -1,0 +1,158 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "react/jsx-key": 0,
+    "no-class-assign": 0,
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    // Правила https://eslint.org/docs/rules/
+    // Запретить console.log('Лог')
+    "no-console": "warn",
+    // Пробелы
+    "no-multi-spaces": "warn",
+    "object-curly-spacing": [
+      "warn",
+      "never",
+      {
+        "objectsInObjects": false,
+        "arraysInObjects": false
+      }
+    ],
+    "array-bracket-spacing": [
+      "warn",
+      "never",
+      {
+        "singleValue": false,
+        "arraysInArrays": false
+      }
+    ],
+    "computed-property-spacing": [
+      "warn",
+      "never"
+    ],
+    "key-spacing": [
+      "warn",
+      {
+        "mode": "strict"
+      }
+    ],
+    "comma-spacing": [
+      "warn",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    // Отступ 4 пробела https://eslint.org/docs/rules/indent
+    "indent": [
+      "warn",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "warn",
+      "unix"
+    ],
+    // Запретить debugger
+    "no-debugger": "warn",
+    // Запретить использование оповещения
+    "no-alert": "warn",
+    // Предлагать const вместо let
+    "prefer-const": "warn",
+    // Запретить ;
+    "semi": [
+      "warn",
+      "never"
+    ],
+    // Если блок if содержит return инструкцию, блок else становится ненужным
+    "no-else-return": "warn",
+    /* Разрешается одинарная ковычка, allowTemplateLiterals - обратные ковычки,
+       avoidEscape - позволяет использовать одинарные или двойные кавычки, внутри строки */
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
+    // Запятые ставятся в конце текущей строки
+    "comma-style": [
+      "warn",
+      "last",
+      {
+        "exceptions": {
+          "ArrayExpression": false,
+          "ArrayPattern": false,
+          "ArrowFunctionExpression": false,
+          "CallExpression": false,
+          "FunctionDeclaration": false,
+          "FunctionExpression": false,
+          "ImportDeclaration": false,
+          "ObjectExpression": false,
+          "VariableDeclaration": false,
+          "NewExpression": false,
+          "ObjectPattern": false
+        }
+      }
+    ],
+    // Запрещает использование запятых в конце объектов и массивов
+    "comma-dangle": [
+      "warn",
+      "never"
+    ],
+    /* Лексическое объявление применяется только к текущему предложению case,
+       заключите ваши предложения в блоки.*/
+    "no-case-declarations": "warn"
+  },
+  "overrides": [
+    {
+      // Переопределяем правила для ts и tsx
+      // enable the rule specifically for TypeScript files
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": [
+          "warn"
+        ],
+        "@typescript-eslint/no-var-requires": [
+          "warn"
+        ],
+        "@typescript-eslint/no-explicit-any": 0
+      }
+    }
+  ]
+}
