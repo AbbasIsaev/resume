@@ -1,6 +1,6 @@
 import $ from 'jquery'
-import anime from 'animejs/lib/anime.es'
-import * as bootstrap from 'bootstrap/dist/js/bootstrap'
+import anime from 'animejs'
+import * as bootstrap from 'bootstrap'
 
 // Пространство имен для подписки и отписки события
 const NAME_SPACE = '.scroll'
@@ -24,10 +24,13 @@ export const scrolling = function () {
         }
     })
 
+    const collapseMenu = new bootstrap.Collapse($('.navbar-collapse'), {
+        toggle: false
+    })
     // Closes responsive menu when a scroll trigger link is clicked
     $('.js-scroll-trigger').on('click' + NAME_SPACE, function () {
         // Скрываем меню
-        new bootstrap.Collapse($('.navbar-collapse'), 'hide')
+        collapseMenu.hide()
         /* if bootstrap 4.6.0
         $('.navbar-collapse').collapse('hide')*/
     })

@@ -275,10 +275,13 @@ export const Dashboard: FC = () => {
                     <div className="row justify-content-center align-items-center">
                         <div className="col-auto my-3 my-lg-0">
                             <YMaps>
-                                <Map defaultState={{
-                                    center: KALUGA_COORDS,
-                                    zoom: 12
-                                }}>
+                                <Map
+                                    defaultState={{
+                                        center: KALUGA_COORDS,
+                                        zoom: 12
+                                    }}
+                                    className={'yandex-map'}
+                                >
                                     <Placemark geometry={KALUGA_COORDS}/>
                                 </Map>
                             </YMaps>
