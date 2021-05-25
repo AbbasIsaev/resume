@@ -4,9 +4,12 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import {App} from './App'
 import reportWebVitals from './reportWebVitals'
+import {ServiceWorkerWrapper} from './components/ServiceWorker/ServiceWorkerWrapper'
+import serviceWorkerRegistration from './serviceWorkerRegistration'
 
 ReactDOM.render(
     <React.StrictMode>
+        <ServiceWorkerWrapper serviceWorkerRegistration={serviceWorkerRegistration}/>
         <App/>
     </React.StrictMode>,
     document.getElementById('root')
