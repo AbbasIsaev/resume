@@ -3,6 +3,12 @@ import {Map, Placemark, YMaps} from 'react-yandex-maps'
 
 import {scrolling, unScrolling} from './scrollingJQ'
 import './Dashboard.css'
+import {Carousel} from '../../components/Carousels/Carousel'
+
+type TMenuItems = {
+    title: string
+    href: string
+}
 
 type TImg = {
     name: string
@@ -19,6 +25,11 @@ type TAbout = {
     title: string
     text: string
     image: TImg
+}
+
+type TProject = {
+    title: string
+    images: TImg[]
 }
 
 const KALUGA_COORDS = [54.513845, 36.261215]
@@ -77,6 +88,25 @@ export const Dashboard: FC = () => {
         )
     }
 
+    const renderProject = (srcPath = 'assets/img/projects/',
+        {index, title, images}: TProject & { index: number }) => (
+        <div className="col-sm-6 col-md-4 project-item" key={index}>
+            <Carousel images={images} srcImagePath={srcPath}/>
+
+            <div className="project-caption bg-grey">
+                <h4>{title}</h4>
+                <p className="text-muted">Illustration</p>
+            </div>
+        </div>
+    )
+
+    const menuItems: TMenuItems[] = [
+        {title: 'Навыки', href: '#services'},
+        {title: 'Проекты', href: '#projects'},
+        {title: 'Опыт', href: '#about'},
+        {title: 'Cвязаться со мной', href: '#contact'}
+    ]
+
     const logoImages: TImg[] = [
         {name: 'react.png', alt: 'react'},
         {name: 'redux.png', alt: 'redux'},
@@ -118,6 +148,33 @@ export const Dashboard: FC = () => {
             title: 'Django',
             text: 'Бэкенд для авторизации администраторов, осуществление настроек прав пользователей, работа с БД PostgreSQL, осуществление хранения файлов. ' +
                 'Применяется подход Django Rest Framework.'
+        }
+    ]
+
+    const projects: TProject[] = [
+        {
+            title: 'React UI', images: [
+                {name: '1-full.jpg', alt: '1-thumbnail'},
+                {name: '2-thumbnail.jpg', alt: '2-thumbnail'},
+                {name: '3-thumbnail.jpg', alt: '3-thumbnail'}
+            ]
+        },
+        {
+            title: 'NodeJS', images: [
+                {name: '2-thumbnail.jpg', alt: '2-thumbnail'},
+                {name: '3-thumbnail.jpg', alt: '3-thumbnail'},
+                {name: '4-thumbnail.jpg', alt: '4-thumbnail'},
+                {name: '5-thumbnail.jpg', alt: '5-thumbnail'},
+                {name: '6-thumbnail.jpg', alt: '6-thumbnail'},
+                {name: '5-thumbnail.jpg', alt: '5-thumbnail'},
+                {name: '6-thumbnail.jpg', alt: '6-thumbnail'}
+            ]
+        },
+        {
+            title: 'Django', images: [
+                {name: '5-full.jpg', alt: '5-thumbnail'},
+                {name: '6-full.jpg', alt: '6-thumbnail'}
+            ]
         }
     ]
 
@@ -189,15 +246,11 @@ export const Dashboard: FC = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav text-uppercase ms-auto">
-                            <li className="nav-item">
-                                <a className="nav-link js-scroll-trigger" href="#services">Навыки</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link js-scroll-trigger" href="#about">Опыт</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link js-scroll-trigger" href="#contact">Cвязаться со мной</a>
-                            </li>
+                            {menuItems.map(item => (
+                                <li className="nav-item" key={item.href}>
+                                    <a className="nav-link js-scroll-trigger" href={item.href}>{item.title}</a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -240,6 +293,20 @@ export const Dashboard: FC = () => {
                     </div>
                 </div>
             </div>
+            {/*Projects*/}
+            <section className="page-section bg-grey" id="projects">
+                <div className="container">
+                    <div className="text-center">
+                        <h2 className="section-heading text-uppercase">Проекты</h2>
+                        <h3 className="section-subheading text-muted">Эти проекты используются в реальной жизни.</h3>
+                    </div>
+                    <div className="row">
+                        {projects.map((item, index) =>
+                            renderProject('assets/img/projects/', {index, ...item}))
+                        }
+                    </div>
+                </div>
+            </section>
             {/*About*/}
             <section className="page-section" id="about">
                 <div className="container">

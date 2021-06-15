@@ -8,10 +8,10 @@ import {ServiceWorkerWrapper} from './components/ServiceWorker/ServiceWorkerWrap
 import serviceWorkerRegistration from './serviceWorkerRegistration'
 
 ReactDOM.render(
-    <React.StrictMode>
+    <>
         <ServiceWorkerWrapper serviceWorkerRegistration={serviceWorkerRegistration}/>
         <App/>
-    </React.StrictMode>,
+    </>,
     document.getElementById('root')
 )
 
