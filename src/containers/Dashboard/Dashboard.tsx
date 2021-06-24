@@ -3,16 +3,11 @@ import {Map, Placemark, YMaps} from 'react-yandex-maps'
 
 import {scrolling, unScrolling} from './scrollingJQ'
 import './Dashboard.css'
-import {Carousel} from '../../components/Carousels/Carousel'
+import {Carousel, TImg} from '../../components/Carousels/Carousel'
 
 type TMenuItems = {
     title: string
     href: string
-}
-
-type TImg = {
-    name: string
-    alt: string
 }
 
 type TService = {
@@ -29,6 +24,8 @@ type TAbout = {
 
 type TProject = {
     title: string
+    remark: string
+    srcPath: string
     images: TImg[]
 }
 
@@ -88,14 +85,13 @@ export const Dashboard: FC = () => {
         )
     }
 
-    const renderProject = (srcPath = 'assets/img/projects/',
-        {index, title, images}: TProject & { index: number }) => (
+    const renderProject = ({index, title, remark, srcPath, images}: TProject & { index: number }) => (
         <div className="col-sm-6 col-md-4 project-item" key={index}>
             <Carousel images={images} srcImagePath={srcPath}/>
 
             <div className="project-caption bg-grey">
                 <h4>{title}</h4>
-                <p className="text-muted">Illustration</p>
+                <p className="text-muted">{remark}</p>
             </div>
         </div>
     )
@@ -153,27 +149,140 @@ export const Dashboard: FC = () => {
 
     const projects: TProject[] = [
         {
-            title: 'React UI', images: [
-                {name: '1-full.jpg', alt: '1-thumbnail'},
-                {name: '2-thumbnail.jpg', alt: '2-thumbnail'},
-                {name: '3-thumbnail.jpg', alt: '3-thumbnail'}
+            title: 'React UI',
+            remark: 'Интерфейс пользователя.',
+            srcPath: 'assets/img/projects/React UI/',
+            images: [
+                {name: '1-1 Главная.png'},
+                {name: '2-1 Вход.png'},
+                {name: '3-1 Установка.png'},
+                {name: '4-1 Навигация.png'},
+                {name: '5-1 Проекты.png'},
+                {name: '5-2 Проекты редактирование.png'},
+                {name: '5-3 Проекты выбор сотрудников.png'},
+                {name: '6-1 Спецификации.png'},
+                {name: '6-2 Спецификации добавление.png'},
+                {name: '6-3 Спецификации редактирование.png'},
+                {name: '7-1 Инспекционный контроль добавление.png'},
+                {name: '8-1 Сотрудники.png'},
+                {name: '8-2-1 Сотрудники фильтры.png'},
+                {name: '8-2-2 Сотрудники фильтры.png'},
+                {name: '8-3-1 Сотрудники добавление.png'},
+                {name: '8-3-2 Сотрудники добавление.png'},
+                {name: '8-4-1 Сотрудники отчеты.png'},
+                {name: '8-4-2 Сотрудники отчеты.png'},
+                {name: '9-1 Справочники организации.png'},
+                {name: '9-2 Организации редактирование.png'},
+                {name: '10-1 Справочники операции редактирование.png'},
+                {name: '11-1 Личный кабинет.png'},
+                {name: '12-1 Доступно обновление.png'}
             ]
         },
         {
-            title: 'NodeJS', images: [
-                {name: '2-thumbnail.jpg', alt: '2-thumbnail'},
-                {name: '3-thumbnail.jpg', alt: '3-thumbnail'},
-                {name: '4-thumbnail.jpg', alt: '4-thumbnail'},
-                {name: '5-thumbnail.jpg', alt: '5-thumbnail'},
-                {name: '6-thumbnail.jpg', alt: '6-thumbnail'},
-                {name: '5-thumbnail.jpg', alt: '5-thumbnail'},
-                {name: '6-thumbnail.jpg', alt: '6-thumbnail'}
+            title: 'NodeJS',
+            remark: 'Документирование кода.',
+            srcPath: 'assets/img/projects/NodeJS/',
+            images: [
+                {name: '1-1 Документирование кода.png'},
+                {name: '1-2 Документирование кода.png'},
+                {name: '1-3 Документирование кода.png'},
+                {name: '1-4 Документирование кода.png'}
             ]
         },
         {
-            title: 'Django', images: [
-                {name: '5-full.jpg', alt: '5-thumbnail'},
-                {name: '6-full.jpg', alt: '6-thumbnail'}
+            title: 'Django',
+            remark: 'Панель администратора.',
+            srcPath: 'assets/img/projects/Django/',
+            images: [
+                {name: '1-1 Вход в систему.png'},
+                {name: '1-2-1 Главная.png'},
+                {name: '1-2-2 Главная.png'},
+                {name: '2-1 Пользователи.png'},
+                {name: '2-2 Пользователи редактирование.png'},
+                {name: '3-1 Проекты.png'},
+                {name: '3-2-1 Проекты добавление.png'},
+                {name: '3-2-2 Проекты добавление.png'},
+                {name: '4-1 Спецификации.png'},
+                {name: '4-2-1 Спецификации редактирование.png'},
+                {name: '4-2-2 Спецификации редактирование.png'},
+                {name: '5-1 Инпекционный контроль.png'},
+                {name: '5-2-1 Инпекционный контроль добавление.png'},
+                {name: '5-2-2 Инпекционный контроль добавление.png'},
+                {name: '6-1 Сотрудники.png'},
+                {name: '6-2-1 Сотрудники добавление.png'},
+                {name: '6-2-2 Сотрудники добавление.png'},
+                {name: '6-3 Сотрудники виды образования.png'},
+                {name: '7-1 Организации.png'},
+                {name: '7-2 Организации добавление.png'}
+            ]
+        },
+        {
+            title: 'Django REST',
+            remark: 'Документирование кода.',
+            srcPath: 'assets/img/projects/Django/',
+            images: [
+                {name: '8-1-1 Django REST.png'},
+                {name: '8-1-2 Django REST.png'},
+                {name: '9-1-1 Документирование кода swagger.png'},
+                {name: '9-1-2 Документирование кода swagger.png'},
+                {name: '9-1-3 Документирование кода swagger.png'},
+                {name: '9-2-1 Документирование кода redoc.png'},
+                {name: '9-2-2 Документирование кода redoc.png'}
+            ]
+        },
+        {
+            title: 'Mobile',
+            remark: 'Адаптивная верста. Вертикальная ориентация.',
+            srcPath: 'assets/img/projects/Mobile/',
+            images: [
+                {name: '1-1 Главная.png'},
+                {name: '2-1 Вход.png'},
+                {name: '3-1-1 Навигация.png'},
+                {name: '3-1-2 Навигация.png'},
+                {name: '4-1 Проекты.png'},
+                {name: '5-1 Спецификации добавление.png'},
+                {name: '6-1 Сотрудники.png'},
+                {name: '6-2-1 Сотрудники фильтры.png'},
+                {name: '6-3-1 Сотрудники добавление.png'},
+                {name: '6-3-2 Сотрудники добавление.png'},
+                {name: '6-4-1 Сотрудники редактирование.png'},
+                {name: '7-1 Справочники организации.png'},
+                {name: '7-2 Организации редактирование.png'},
+                {name: '8-1 Справочники операции.png'},
+                {name: '8-2 Справочники операции добавление.png'},
+                {name: '9-1-1 Личный кабинет.png'},
+                {name: '9-1-2 Личный кабинет.png'}
+            ]
+        },
+        {
+            title: 'Mobile',
+            remark: 'Адаптивная верста. Горизонтальная ориентация.',
+            srcPath: 'assets/img/projects/Mobile/',
+            images: [
+                {name: '_1-1 Главная.png'},
+                {name: '_2-1 Установка.png'},
+                {name: '_3-1 Навигация.png'},
+                {name: '_5-1 Проекты.png'},
+                {name: '_6-1 Спецификации.png'},
+                {name: '_6-3-1 Спецификации редактирование.png'},
+                {name: '_6-3-2 Спецификации редактирование.png'},
+                {name: '_7-1 Инспекционный контроль добавление.png'},
+                {name: '_8-1-1 Сотрудники.png'},
+                {name: '_8-1-2 Сотрудники.png'},
+                {name: '_8-3-1 Сотрудники добавление.png'},
+                {name: '_8-3-2 Сотрудники добавление.png'},
+                {name: '_8-3-3 Сотрудники добавление.png'}
+            ]
+        },
+        {
+            title: 'PWA и Workbox',
+            remark: 'Прогрессивное веб-приложение.',
+            srcPath: 'assets/img/projects/PWA/',
+            images: [
+                {name: '3-1 Установка.png'},
+                {name: '12-1 Доступно обновление.png'},
+                {name: '_1-1 Главная.png'},
+                {name: '_2-1 Установка.png'}
             ]
         }
     ]
@@ -302,7 +411,7 @@ export const Dashboard: FC = () => {
                     </div>
                     <div className="row">
                         {projects.map((item, index) =>
-                            renderProject('assets/img/projects/', {index, ...item}))
+                            renderProject({index, ...item}))
                         }
                     </div>
                 </div>

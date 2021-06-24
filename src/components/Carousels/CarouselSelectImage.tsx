@@ -1,26 +1,22 @@
 import React, {FC} from 'react'
 
-type TImg = {
-    name: string
-    alt: string
-}
+import {TImg, useCarouselContext} from './Carousel'
 
 type Props = {
     images: TImg[]
     srcImagePath: string
     interval?: number
-    selectImage?: TImg
 }
 
 export const CarouselSelectImage: FC<Props> = ({
-    images, srcImagePath, interval = 10000,
-    selectImage
+    images, srcImagePath, interval = 10000
 }) => {
     const carouselId = `carouselDark-${Date.now()}`
+    const selectImage = useCarouselContext()
 
     return (
         <div
-            id={carouselId} className="carousel carousel-dark slide position-static my-3"
+            id={carouselId} className="carousel carousel-dark slide position-static text-center my-3"
             data-bs-ride="carousel" data-bs-interval={interval}
         >
             <div className="carousel-inner">
@@ -35,9 +31,9 @@ export const CarouselSelectImage: FC<Props> = ({
                             className={'carousel-item ' + activeClass}
                         >
                             <img
-                                className="img-fluid img-mh400"
+                                className="img-fluid img-mh800"
                                 src={srcImagePath + img.name}
-                                alt={img.alt}/>
+                                alt={img.alt ? img.alt : img.name}/>
                         </div>
                     )
                 })}

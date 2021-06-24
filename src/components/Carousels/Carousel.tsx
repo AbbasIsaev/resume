@@ -1,16 +1,22 @@
-import React, {FC, useRef, useState} from 'react'
+import React, {createContext, FC, useContext, useRef, useState} from 'react'
 
 import {ImageDialog} from '../Dialogs/ImageDialog'
 
-type TImg = {
+export type TImg = {
     name: string
-    alt: string
+    alt?: string
 }
 
 type Props = {
     images: TImg[]
     srcImagePath: string
     interval?: number | boolean
+}
+
+const CarouselContext = createContext<TImg | undefined>(undefined)
+
+export const useCarouselContext = (): TImg | undefined => {
+    return useContext(CarouselContext)
 }
 
 export const Carousel: FC<Props> = ({images, srcImagePath, interval = 10000}) => {
@@ -59,7 +65,7 @@ export const Carousel: FC<Props> = ({images, srcImagePath, interval = 10000}) =>
                                     <img
                                         className="img-fluid"
                                         src={srcImagePath + img.name}
-                                        alt={img.alt}/>
+                                        alt={img.alt ? img.alt : img.name}/>
                                 </div>
                             </div>
                         )
@@ -84,11 +90,12 @@ export const Carousel: FC<Props> = ({images, srcImagePath, interval = 10000}) =>
                 </button>
             </div>
 
-            <ImageDialog
-                open={open} onClose={onCloseModel}
-                images={images} srcImagePath={srcImagePath}
-                selectImage={refImg.current}
-            />
+            <CarouselContext.Provider value={refImg.current}>
+                <ImageDialog
+                    open={open} onClose={onCloseModel}
+                    images={images} srcImagePath={srcImagePath}
+                />
+            </CarouselContext.Provider>
         </>
     )
 }
