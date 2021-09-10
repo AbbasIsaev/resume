@@ -25,92 +25,92 @@
     "srcPath": "assets/img/logos/",
     "list": [
       {
-        "name": "react.png ",
-        "alt": "react "
+        "name": "react.png",
+        "alt": "react"
       },
       {
-        "name": "redux.png ",
-        "alt": "redux "
+        "name": "redux.png",
+        "alt": "redux"
       },
       {
-        "name": "node-js.png ",
-        "alt": "node-js "
+        "name": "node-js.png",
+        "alt": "node-js"
       },
       {
-        "name": "express-js.png ",
-        "alt": "express-js "
+        "name": "express-js.png",
+        "alt": "express-js"
       },
       {
-        "name": "sequelize.png ",
-        "alt": "sequelize "
+        "name": "sequelize.png",
+        "alt": "sequelize"
       },
       {
-        "name": "type-script.png ",
-        "alt": "type-script "
+        "name": "type-script.png",
+        "alt": "type-script"
       },
       {
-        "name": "webpack.png ",
-        "alt": "webpack "
+        "name": "webpack.png",
+        "alt": "webpack"
       },
       {
-        "name": "mysql.png ",
-        "alt": "mysql "
+        "name": "mysql.png",
+        "alt": "mysql"
       },
       {
-        "name": "postgresql.png ",
-        "alt": "postgresql "
+        "name": "postgresql.png",
+        "alt": "postgresql"
       },
       {
-        "name": "redis.png ",
-        "alt": "redis "
+        "name": "redis.png",
+        "alt": "redis"
       },
       {
-        "name": "material-ui.png ",
-        "alt": "material-ui "
+        "name": "material-ui.png",
+        "alt": "material-ui"
       },
       {
-        "name": "kendo-ui.png ",
-        "alt": "kendo-ui "
+        "name": "kendo-ui.png",
+        "alt": "kendo-ui"
       },
       {
-        "name": "bootstrap.png ",
-        "alt": "bootstrap "
+        "name": "bootstrap.png",
+        "alt": "bootstrap"
       },
       {
-        "name": "pwa.png ",
-        "alt": "pwa "
+        "name": "pwa.png",
+        "alt": "pwa"
       },
       {
-        "name": "workbox.png ",
-        "alt": "workbox "
+        "name": "workbox.png",
+        "alt": "workbox"
       },
       {
-        "name": "nginx.png ",
-        "alt": "nginx "
+        "name": "nginx.png",
+        "alt": "nginx"
       },
       {
-        "name": "python.png ",
-        "alt": "python "
+        "name": "python.png",
+        "alt": "python"
       },
       {
-        "name": "django.png ",
-        "alt": "django "
+        "name": "django.png",
+        "alt": "django"
       },
       {
-        "name": "django-rest-framework.png ",
-        "alt": "django-rest-framework "
+        "name": "django-rest-framework.png",
+        "alt": "django-rest-framework"
       },
       {
-        "name": "docker.png ",
-        "alt": "docker "
+        "name": "docker.png",
+        "alt": "docker"
       },
       {
-        "name": "docker-compose.png ",
-        "alt": "docker-compose "
+        "name": "docker-compose.png",
+        "alt": "docker-compose"
       },
       {
-        "name": "git.png ",
-        "alt": "git "
+        "name": "git.png",
+        "alt": "git"
       }
     ]
   },
