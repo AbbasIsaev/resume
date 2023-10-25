@@ -182,7 +182,7 @@ header.masthead {
     padding-bottom: 11rem;
     text-align: center;
     color: #fff;
-    background-image: url("/assets/img/header-bg.png");
+    background-image: url("../../../public/assets/img/header-bg.png");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;

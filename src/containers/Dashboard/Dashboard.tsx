@@ -1,27 +1,24 @@
 import React, {FC, useEffect, useState} from 'react'
-import {Map, Placemark, YMaps} from 'react-yandex-maps'
+import {Map, Placemark, YMaps} from '@pbe/react-yandex-maps'
 
-import {scrolling, unScrolling} from './scrollingJQ'
-import './Dashboard.css'
 import {Carousel, TImg} from '../../components/Carousels/Carousel'
-import {fetchEntity} from '../../services/httpService'
-import {CONST, FILTER_RESUME_ISAEV_ABBAS, NAME} from '../../config/routes'
 import {
     IAbout,
-    IConst,
     IContact,
-    IData,
     ILogo,
     IMasthead,
     INavigation,
     IParam,
-    IParams,
     TAbout,
     TProject,
     TService
 } from '../../types/interfaces'
 
-const KALUGA_COORDS: [number, number] = [54.513845, 36.261215]
+import {scrolling, unScrolling} from './scrollingJQ'
+import './Dashboard.css'
+import example from '././example.json'
+
+const KALUGA_COORDS = [54.513845, 36.261215]
 
 export const Dashboard: FC = () => {
 
@@ -93,27 +90,14 @@ export const Dashboard: FC = () => {
             copyright: 'Isaev Abbas'
         }
     )
-
     useEffect(() => {
-        const param = `${NAME}=${FILTER_RESUME_ISAEV_ABBAS}`
-        fetchEntity(CONST, param)
-            .then(response => response.data)
-            .then((data: IData<IConst>) => {
-                try {
-                    const {results} = data
-                    const params: IParams = JSON.parse(results?.[0]?.params)
-
-                    // Устанавливаем данные, полученные от сервера
-                    setMasthead(params.masthead)
-                    setService(params.service)
-                    setLogo(params.logo)
-                    setProject(params.project)
-                    setAbout(params.about)
-                    setContact(params.contact)
-                } catch (e) {
-                    // console.log(e)
-                }
-            })
+        // Устанавливаем данные, полученные от сервера
+        setMasthead(example.masthead)
+        setService(example.service)
+        setLogo(example.logo)
+        setProject(example.project)
+        setAbout(example.about)
+        setContact(example.contact)
     }, [])
 
     const renderImg = (srcPath = 'assets/img/', {name, alt}: TImg) => (
@@ -251,11 +235,11 @@ export const Dashboard: FC = () => {
                             renderAbout(about.srcPath, {...aboutItem, index})
                         ))}
                         {about.lastTimeline &&
-                        <li>
-                            <div className="timeline-image">
-                                <h4>{about.lastTimeline}</h4>
-                            </div>
-                        </li>
+                            <li>
+                                <div className="timeline-image">
+                                    <h4>{about.lastTimeline}</h4>
+                                </div>
+                            </li>
                         }
                     </ul>
                 </div>
@@ -268,45 +252,45 @@ export const Dashboard: FC = () => {
                     </div>
                     <div className="row justify-content-center align-items-center">
                         {contact.coords &&
-                        <div className="col-auto my-3 my-lg-0">
-                            <YMaps>
-                                <Map
-                                    state={{
-                                        center: contact.coords,
-                                        zoom: 12
-                                    }}
-                                    className={'yandex-map'}
-                                >
-                                    <Placemark geometry={contact.coords}/>
-                                </Map>
-                            </YMaps>
-                        </div>
+                            <div className="col-auto my-3 my-lg-0">
+                                <YMaps>
+                                    <Map
+                                        state={{
+                                            center: contact.coords,
+                                            zoom: 12
+                                        }}
+                                        className={'yandex-map'}
+                                    >
+                                        <Placemark geometry={contact.coords}/>
+                                    </Map>
+                                </YMaps>
+                            </div>
                         }
                         <div className="col-auto my-3 my-lg-0">
                             {contact.email &&
-                            <p className="text-white">Почта: {contact.email}</p>
+                                <p className="text-white">Почта: {contact.email}</p>
                             }
                             {contact.github &&
-                            <p className="text-white">GitHub:
-                                <a
-                                    className="btn btn-social mx-2"
-                                    href={contact.github}
-                                    target="_blank"
-                                    rel="noreferrer">
-                                    <i className="fab fa-github fs-2 text-white"/>
-                                </a>
-                            </p>
+                                <p className="text-white">GitHub:
+                                    <a
+                                        className="btn btn-social mx-2"
+                                        href={contact.github}
+                                        target="_blank"
+                                        rel="noreferrer">
+                                        <i className="fab fa-github fs-2 text-white"/>
+                                    </a>
+                                </p>
                             }
                             {contact.vk &&
-                            <p className="text-white">В контакте:
-                                <a
-                                    className="btn btn-social mx-2"
-                                    href={contact.vk}
-                                    target="_blank"
-                                    rel="noreferrer">
-                                    <i className="fab fa-vk fs-2 text-white"/>
-                                </a>
-                            </p>
+                                <p className="text-white">В контакте:
+                                    <a
+                                        className="btn btn-social mx-2"
+                                        href={contact.vk}
+                                        target="_blank"
+                                        rel="noreferrer">
+                                        <i className="fab fa-vk fs-2 text-white"/>
+                                    </a>
+                                </p>
                             }
                         </div>
                     </div>
@@ -321,22 +305,22 @@ export const Dashboard: FC = () => {
                         </div>
                         <div className="col-lg-4 my-3 my-lg-0">
                             {contact.github &&
-                            <a
-                                className="btn btn-social mx-2"
-                                href={contact.github}
-                                target="_blank"
-                                rel="noreferrer">
-                                <i className="fab fa-github fs-2"/>
-                            </a>
+                                <a
+                                    className="btn btn-social mx-2"
+                                    href={contact.github}
+                                    target="_blank"
+                                    rel="noreferrer">
+                                    <i className="fab fa-github fs-2"/>
+                                </a>
                             }
                             {contact.vk &&
-                            <a
-                                className="btn btn-social mx-2"
-                                href={contact.vk}
-                                target="_blank"
-                                rel="noreferrer">
-                                <i className="fab fa-vk fs-2"/>
-                            </a>
+                                <a
+                                    className="btn btn-social mx-2"
+                                    href={contact.vk}
+                                    target="_blank"
+                                    rel="noreferrer">
+                                    <i className="fab fa-vk fs-2"/>
+                                </a>
                             }
                         </div>
                     </div>

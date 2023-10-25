@@ -8,7 +8,7 @@
 
 Устанавливает зависимости проекта.
 
-### `npm run start:dev`
+### `npm run start`
 
 Запускает проект в режиме development. Для проверки работоспособности перейти по
 ссылке [http://localhost:3000](http://localhost:3000)

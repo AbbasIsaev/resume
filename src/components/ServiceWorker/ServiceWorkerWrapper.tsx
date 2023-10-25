@@ -1,5 +1,5 @@
 import React, {FC, useEffect} from 'react'
-import {Button, Snackbar} from '@material-ui/core'
+import {Button, Snackbar} from '@mui/material'
 
 type Config = {
     onSuccess?: (registration: ServiceWorkerRegistration) => void

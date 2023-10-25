@@ -63,7 +63,7 @@ export interface IContact {
     email?: string
     github?: string
     vk?: string
-    coords: [number, number]
+    coords: number[]
     copyright: string
 }
 

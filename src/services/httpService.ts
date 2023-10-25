@@ -1,5 +1,6 @@
-import rest from './rest'
 import {AxiosRequestConfig, AxiosResponse} from 'axios'
+
+import rest from './rest'
 
 export function fetchEntity(entityName: string, param?: string, config?: AxiosRequestConfig): Promise<AxiosResponse> {
     let uri = '/'

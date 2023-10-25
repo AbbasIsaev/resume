@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {ReactElement} from 'react'
 
 import {Dashboard} from './containers/Dashboard/Dashboard'
 
-export function App(): JSX.Element {
+export function App(): ReactElement {
     return (
         <Dashboard/>
     )
