@@ -5,35 +5,15 @@
     "node": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "react-app"
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
   "rules": {
     "react/prop-types": 0,
     "react/display-name": 0,
-    "react/jsx-key": 0,
-    "no-class-assign": 0,
-    "no-unused-vars": 0,
+    "react/jsx-key": "warn",
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/explicit-module-boundary-types": 0,
+    "import/no-anonymous-default-export": 0,
     // Правила https://eslint.org/docs/rules/
     // Запретить console.log('Лог')
     "no-console": "warn",
@@ -134,7 +114,32 @@
     ],
     /* Лексическое объявление применяется только к текущему предложению case,
        заключите ваши предложения в блоки.*/
-    "no-case-declarations": "warn"
+    "no-case-declarations": "warn",
+    "no-use-before-define": 0,
+    // Без конструкции throw
+    "no-throw-literal": 0,
+    // Порядок расположения импортов
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    // Запрещает новую строку в конце файлов
+    "eol-last": [
+      "warn",
+      "never"
+    ]
   },
   "overrides": [
     {
@@ -145,7 +150,6 @@
         "*.tsx"
       ],
       "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": 0,
         "@typescript-eslint/no-var-requires": [
           "warn"
         ],

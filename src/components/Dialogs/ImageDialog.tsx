@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {Dialog} from '@material-ui/core'
+import {Dialog} from '@mui/material'
 
 import {CarouselSelectImage} from '../Carousels/CarouselSelectImage'
 import {TImg} from '../Carousels/Carousel'

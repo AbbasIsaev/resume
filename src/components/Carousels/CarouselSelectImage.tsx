@@ -17,7 +17,7 @@ export const CarouselSelectImage: FC<Props> = ({
     return (
         <div
             id={carouselId} className="carousel carousel-dark slide position-static text-center my-3"
-            data-bs-ride="carousel" data-bs-interval={interval}
+            data-bs-ride="carousel"
         >
             <div className="carousel-inner">
                 {images.map((img, index) => {
@@ -29,6 +29,7 @@ export const CarouselSelectImage: FC<Props> = ({
                         <div
                             key={index}
                             className={'carousel-item ' + activeClass}
+                            data-bs-interval={interval}
                         >
                             <img
                                 className="img-fluid img-mh800"

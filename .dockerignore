@@ -1,9 +1,6 @@
 .git
 .idea
 node_modules
-logs
 other
-*/media
 */node_modules
 */build
-*/logs
