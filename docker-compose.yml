@@ -9,7 +9,7 @@ services:
     container_name: resume
     restart: unless-stopped
     ports:
-      - "7070:5000"
+      - "7070:8080"
     networks:
       - resume
 

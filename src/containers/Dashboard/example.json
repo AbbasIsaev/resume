@@ -4,8 +4,8 @@
     "description": "Моё мини-резюме"
   },
   "service": {
-    "title": "НАВЫКИ В ПРОГРАММИРОВАНИИ",
-    "description": "На текущий момент пишу с нуля full stack системы React+NodeJS+Django+PostgreSQL. В своих проектах для автоматизации развёртывания и управления приложениями использую Docker, с написанием Docker Compose файлов. Исходники хранятся в системе Git.",
+    "title": "НАВЫКИ",
+    "description": "Разрабатываю с нуля full stack системы React+NodeJS+Django+PostgreSQL. В своих проектах для автоматизации развёртывания и управления приложениями использую Docker, с написанием Docker Compose файлов. Исходники хранятся в системе Git.",
     "list": [
       {
         "title": "React",
