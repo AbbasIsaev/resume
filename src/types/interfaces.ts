@@ -1,12 +1,5 @@
 import {TImg} from '../components/Carousels/Carousel'
 
-export interface IData<T> {
-    count: number
-    next: null | string,
-    previous: null | string,
-    results: T[]
-}
-
 export interface IParam<T> {
     title: string
     description: string
@@ -23,16 +16,7 @@ export interface ILogo {
     list: TImg[]
 }
 
-export interface IParams {
-    masthead: IMasthead
-    service: IParam<TService>
-    project: IParam<TProject>
-    about: IAbout
-    contact: IContact
-    logo: ILogo
-}
-
-export type TService = {
+export type TSkill = {
     title: string
     text: string
 }
@@ -51,20 +35,16 @@ export type TAbout = {
     image: TImg
 }
 
-export interface IConst {
-    id: string
-    name: string
-    params: string
-    remark: string
-}
-
 export interface IContact {
     title: string
     email?: string
+    phone?: string
     github?: string
     vk?: string
     coords: number[]
     copyright: string
+    srcPath: string
+    qrCodes: TImg[]
 }
 
 export type INavigation = {

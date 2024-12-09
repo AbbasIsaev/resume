@@ -3,7 +3,7 @@
     "title": "Добро пожаловать!",
     "description": "Моё мини-резюме"
   },
-  "service": {
+  "skill": {
     "title": "НАВЫКИ",
     "description": "Разрабатываю с нуля full stack системы React+NodeJS+Django+PostgreSQL. В своих проектах для автоматизации развёртывания и управления приложениями использую Docker, с написанием Docker Compose файлов. Исходники хранятся в системе Git.",
     "list": [
@@ -480,12 +480,28 @@
   "contact": {
     "title": "СВЯЗАТЬСЯ СО МНОЙ",
     "email": "abbas.isaev@gmail.com",
+    "phone": "+7-953-313-39-40",
     "github": "https://github.com/AbbasIsaev",
     "vk": "https://vk.com/abbas.isaev",
     "coords": [
       54.513845,
       36.261215
     ],
-    "copyright": "Isaev Abbas"
+    "copyright": "Isaev Abbas",
+    "srcPath": "assets/img/qrcodes/",
+    "qrCodes": [
+      {
+        "name": "qr-code-phone.png",
+        "alt": "+7-953-313-39-40"
+      },
+      {
+        "name": "qr-code-whatsapp.png",
+        "alt": "WhatsApp"
+      },
+      {
+        "name": "qr-code-telegram.png",
+        "alt": "Telegram"
+      }
+    ]
   }
 }
