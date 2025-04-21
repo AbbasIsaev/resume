@@ -9,7 +9,7 @@ const navigation: INavigation = {
         {title: 'Навыки', href: '#skills'},
         {title: 'Проекты', href: '#projects'},
         {title: 'Опыт', href: '#about'},
-        {title: 'Cвязаться со мной', href: '#contact'}
+        {title: 'Контакты', href: '#contact'}
     ]
 }
 

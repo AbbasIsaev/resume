@@ -21,11 +21,16 @@ export type TSkill = {
     text: string
 }
 
-export type TProject = {
+export type TProjectItem = {
     title: string
     remark: string
     srcPath: string
     images: TImg[]
+}
+
+export interface IProject {
+    name: string
+    items: TProjectItem[]
 }
 
 export type TAbout = {

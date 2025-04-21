@@ -15,7 +15,7 @@ type Props = {
 export const ImageDialog: FC<Props> = ({
     open, onClose, images, srcImagePath
 }) => (
-    <Dialog open={open} onClose={onClose} fullWidth={true} maxWidth={'lg'}>
+    <Dialog open={open} onClose={onClose} fullWidth={true} maxWidth={'xl'}>
         <CarouselSelectImage images={images} srcImagePath={srcImagePath} interval={0}/>
     </Dialog>
 )
