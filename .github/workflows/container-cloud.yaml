@@ -36,4 +36,4 @@ jobs:
     # Deploy to the environment
     environment:
       name: cloud-public-url
-      url: https://resume.containers.cloud.ru/
+      url: https://resume.containerapps.ru/
