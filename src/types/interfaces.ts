@@ -19,6 +19,7 @@ export interface ILogo {
 export type TSkill = {
     title: string
     text: string
+    href?: string
 }
 
 export type TProjectItem = {
@@ -35,6 +36,7 @@ export interface IProject {
 
 export type TAbout = {
     years: string
+    href: string
     title: string
     text: string
     image: TImg

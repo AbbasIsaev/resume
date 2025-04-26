@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react'
+import {Link} from '@mui/material'
 
 import example from '../example.json'
 import {IParam, TSkill} from '../../../types/interfaces'
 
-function renderSkill({title, text}: TSkill) {
+function renderSkill({title, href, text}: TSkill) {
     return (
         <div className="col-md-4" key={title}>
-            <h4 className="my-3">{title}</h4>
+            {href
+                ?
+                <h4 className="my-3">
+                    <Link href={href} underline="none" target="_blank" rel="noreferrer">{title}</Link>
+                </h4>
+                : <h4 className="my-3">{title}</h4>
+            }
             <p className="text-muted">{text}</p>
         </div>
     )
