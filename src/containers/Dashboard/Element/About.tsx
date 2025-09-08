@@ -79,7 +79,14 @@ export const About = () => {
                 <div className="text-center pb-5">
                     <Plot
                         data={data}
-                        layout={{height: 300, margin: {'t': 10, 'b': 10, 'l': 0, 'r': 0}, legend: {x: 0, y: 0.5}}}
+                        layout={{
+                            height: 300,
+                            autosize: true,
+                            margin: {'t': 10, 'b': 10, 'l': 0, 'r': 0},
+                            legend: {x: 0, y: 0.5}
+                        }}
+                        useResizeHandler={true} // Enables automatic resizing on window resize
+                        className="plot-size"
                     />
                 </div>
 

@@ -42,6 +42,17 @@ p {
     }
 }
 
+.plot-size {
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 992px) {
+    .plot-size {
+        width: 60%;
+    }
+}
+
 ::-moz-selection {
     background: #fed136;
     text-shadow: none;
