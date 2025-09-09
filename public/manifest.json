@@ -39,37 +39,37 @@
   "background_color": "#ffffff",
   "screenshots": [
     {
-      "src": "/assets/screenshots/screenshot-1.png",
+      "src": "./assets/screenshots/screenshot-1.png",
       "sizes": "1920x929",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/assets/screenshots/screenshot-2.png",
+      "src": "./assets/screenshots/screenshot-2.png",
       "sizes": "1920x929",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/assets/screenshots/screenshot-3.png",
+      "src": "./assets/screenshots/screenshot-3.png",
       "sizes": "1920x929",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/assets/screenshots/screenshot-mobile-1.jpg",
+      "src": "./assets/screenshots/screenshot-mobile-1.jpg",
       "type": "image/jpeg",
       "sizes": "1080x2309",
       "form_factor": "narrow"
     },
     {
-      "src": "/assets/screenshots/screenshot-mobile-2.jpg",
+      "src": "./assets/screenshots/screenshot-mobile-2.jpg",
       "type": "image/jpeg",
       "sizes": "1080x2309",
       "form_factor": "narrow"
     },
     {
-      "src": "/assets/screenshots/screenshot-mobile-3.jpg",
+      "src": "./assets/screenshots/screenshot-mobile-3.jpg",
       "type": "image/jpeg",
       "sizes": "1080x2309",
       "form_factor": "narrow"
