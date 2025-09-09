@@ -58,7 +58,7 @@ export const About = () => {
 
         return [{
             values: [5 * 12 + 10, 6, 5, monthsBT, monthsNLMK],
-            text: ['5 лет, 10 мес.', '6 мес.', '5 мес.1', yearsAndMonthsBT, yearsAndMonthsNLMK],
+            text: ['5 лет, 10 мес.', '6 мес.', '5 мес.', yearsAndMonthsBT, yearsAndMonthsNLMK],
             labels: ['МГТУ', 'Фирма Фавор', 'ВымпелКом', 'Бизнес Тренд', 'НЛМК'],
             textinfo: 'label',
             textposition: 'outside',
