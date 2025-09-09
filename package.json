@@ -52,7 +52,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build2": "react-scripts build && echo 'homepage=${REACT_APP_HOME_URL}' > public/.env",
     "live-server": "REACT_APP_HOME_URL=/resume & npx live-server ./build --port=3010",
     "start:prod": "npm run build && serve -s ./build",
     "lint": "eslint ./src",
