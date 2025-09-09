@@ -2,7 +2,7 @@
   "name": "resume",
   "version": "2.0.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "./resume",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -52,7 +52,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "live-server": "npx live-server ./build --port=3010",
+    "build2": "react-scripts build && echo 'homepage=${REACT_APP_HOME_URL}' > public/.env",
+    "live-server": "REACT_APP_HOME_URL=/resume & npx live-server ./build --port=3010",
     "start:prod": "npm run build && serve -s ./build",
     "lint": "eslint ./src",
     "lint:fix": "npm run lint -- --fix",
