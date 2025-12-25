@@ -15,6 +15,10 @@ code {
     monospace;
 }
 
+a:hover {
+    opacity: 0.6;
+}
+
 /* Scrollbar */
 body::-webkit-scrollbar {
     width: 8px;

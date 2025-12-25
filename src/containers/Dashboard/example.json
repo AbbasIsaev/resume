@@ -141,7 +141,7 @@
     "description": "Эти проекты используются в реальной жизни.",
     "list": [
       {
-        "name": "Система прослеживаемости",
+        "name": "Система прослеживаемости \"Бизнес Тренд\"",
         "items": [
           {
             "title": "React UI",
@@ -432,7 +432,7 @@
         ]
       },
       {
-        "name": "Аналитическая платформа",
+        "name": "Аналитическая платформа \"НЛМК\"",
         "items": [
           {
             "title": "React UI",
@@ -653,16 +653,19 @@
     "srcPath": "assets/img/qrcodes/",
     "qrCodes": [
       {
-        "name": "qr-code-phone.png",
-        "alt": "+7-953-313-39-40"
-      },
-      {
         "name": "qr-code-whatsapp.png",
-        "alt": "WhatsApp"
+        "alt": "WhatsApp",
+        "href": "https://wa.me/79533133940"
       },
       {
         "name": "qr-code-telegram.png",
-        "alt": "Telegram"
+        "alt": "Telegram",
+        "href": "https://t.me/+79533133940"
+      },
+      {
+        "name": "qr-code-max.png",
+        "alt": "Max",
+        "href": "https://max.ru/u/f9LHodD0cOLmvH30yn5VwZetPCRHRvggQjULGOgXwOeVfdLXcmVl69MKM6Q"
       }
     ]
   }

@@ -5,6 +5,7 @@ import {ImageDialog} from '../Dialogs/ImageDialog'
 export type TImg = {
     name: string
     alt?: string
+    href?: string
 }
 
 type Props = {

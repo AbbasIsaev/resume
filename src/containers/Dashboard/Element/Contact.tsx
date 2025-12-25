@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Map, Placemark, YMaps} from '@pbe/react-yandex-maps'
+import {Link} from '@mui/material'
 
 import example from '../example.json'
 import {IContact} from '../../../types/interfaces'
@@ -49,7 +50,14 @@ export const Contact = () => {
                                 src={contact.srcPath + qrCode.name}
                                 alt={qrCode.alt ? qrCode.alt : qrCode.name}
                             />
-                            <p className="text-center text-white">{qrCode.alt}</p>
+                            <div className="text-center">
+                                <Link
+                                    href={qrCode.href} underline="none" target="_blank" rel="noreferrer"
+                                    className="text-white"
+                                >
+                                    {qrCode.alt}
+                                </Link>
+                            </div>
                         </div>
                     ))}
 
