@@ -1,6 +1,6 @@
 # Резюме [![Node.js CI](https://github.com/AbbasIsaev/resume/actions/workflows/node.js.yml/badge.svg)](https://github.com/AbbasIsaev/resume/actions/workflows/node.js.yml)
 
-Структура проекта React + TypeScript + MaterialUI + Bootstrap + Plotly + Workbox (PWA).
+Структура проекта React + TypeScript + MaterialUI + Bootstrap + Plotly + Yandex-maps + Workbox (PWA).
 
 ## Доступные скрипты
 
